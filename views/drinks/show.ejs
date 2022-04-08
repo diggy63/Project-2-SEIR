@@ -1,6 +1,25 @@
+<%- include('../partials/header') %>
 <h1> <%=drink.name%> </h1>
+    <ul>
+        <% drink.comments.forEach(e => { %>
+         <li>
+            <%= e.content %>
+            <br>
+            <%= e.rating %>
+        <% if (user && user._id.equals(e.user)) { %>
+            <form id="delete-comment" action="/drinks/<%=drink._id%>/comments/<%=e._id%>?_method=DELETE" method="POST">
+            <input type="submit" value="X">
+            </form>
+         
+        <% } %>
 
-<form id="add-review-form" method="POST" action="/drinks/<%=drink._id%>/reviews">
+         </li>
+        <% }) %>
+    </ul>
+<% if (user) { %>
+ 
+
+<form id="add-review-form" method="POST" action="/drinks/<%=drink._id%>/comments">
     <label>Comment:</label>
     <textarea name="content"></textarea>
     <label>Rating:</label>
@@ -17,5 +36,7 @@
           <option value="10">10</option>
      </select>
      <input type="submit" value="Add Comment">
+     <% } %>
 
 </form>
+<%- include('../partials/footer') %>

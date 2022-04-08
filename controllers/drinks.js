@@ -12,12 +12,10 @@ function index(req, res){
 }
 
 function newDrink(req, res){
-    console.log(req.user);
     res.render("drinks/new");
 }
 
 function createDrink(req, res){
-    console.log("drinks Controller");
     const newDrink = new Drink(req.body);
     newDrink.save(function(err){
         res.redirect("/drinks"); 
@@ -25,10 +23,9 @@ function createDrink(req, res){
 }
 
 function show(req,res){
-    console.log(Drink);
     //console.log(req.params.id);
     Drink.findById(req.params.id, function(err, drink){
-        console.log(drink);
+        console.group(drink);
         res.render("drinks/show", {
             drink,
         })

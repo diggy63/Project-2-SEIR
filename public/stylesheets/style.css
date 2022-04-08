@@ -38,8 +38,3 @@ img {
   height: 30px;
 }
 
-#add-review-form {
-  display: grid;
-  grid-template-columns: auto auto;
-  grid-gap: 1rem;
-}
