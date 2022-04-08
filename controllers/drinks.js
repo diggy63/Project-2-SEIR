@@ -7,11 +7,20 @@ function index(req, res){
     res.render("drinks/index");
 }
 
+function newDrink(req, res){
+    res.render("drinks/new");
+}
+
+function createDrink(req, res){
+    res.redirect("/");
+}
 
 
 
 
 
 module.exports = {
-    index
+    index,
+    new: newDrink,
+    create: createDrink
 };

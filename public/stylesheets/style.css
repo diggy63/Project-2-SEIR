@@ -1,3 +1,7 @@
+body{
+  margin-top: 75px;
+}
+
 .brand-logo {
   margin-left: 15px;
 }
@@ -21,4 +25,15 @@
 
 img {
   max-width: 100px;
+}
+
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 34px;
+}
+
+.login img {
+  height: 30px;
 }

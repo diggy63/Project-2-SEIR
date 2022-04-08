@@ -6,6 +6,7 @@ const drinkCtrl = require('../controllers/drinks');
 
 
 router.get('/', drinkCtrl.index);
-
+router.get('/new', drinkCtrl.new);
+router.post('/', drinkCtrl.create);
 
 module.exports = router;
