@@ -1,6 +1,12 @@
 <%- include('../partials/header') %>
     <h1>Drink view Page</h1>
-    
+    <ul>
+    <% drinks.forEach(d => { %>
+     <li><%= d.name %>
+        <a href="/drinks/<%= d.id%>"><button>details</button></a>
+    </li>
+    <% }) %>
+    <ul>    
     
     
     
