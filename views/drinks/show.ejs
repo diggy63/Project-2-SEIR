@@ -1,5 +1,13 @@
 <%- include('../partials/header') %>
+<div> 
 <h1> <%=drink.name%> </h1>
+<% if (user && user._id.equals(drink.user)) { %>
+    <form id="delete-comment" action="/drinks/<%=drink._id%>?_method=DELETE" method="POST">
+    <input type="submit" value="X">
+    </form>
+ 
+<% } %>
+</div>
     <ul>
         <% drink.comments.forEach(e => { %>
          <li>

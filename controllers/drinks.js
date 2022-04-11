@@ -16,7 +16,11 @@ function newDrink(req, res){
 }
 
 function createDrink(req, res){
+    req.body.user = req.user._id;
+	req.body.userName = req.user.name;
+	req.body.userAvatar = req.user.avatar;
     const newDrink = new Drink(req.body);
+    console.log(newDrink);
     newDrink.save(function(err){
         res.redirect("/drinks"); 
     })
@@ -32,6 +36,14 @@ function show(req,res){
     })
 }
 
+function deleteDrink(req, res){
+    Drink.findOneAndDelete(
+        {_id: req.params.id, user: req.user._id}, function(err) {
+        res.redirect("/drinks");
+
+    })
+}
+
 
 
 
@@ -39,5 +51,6 @@ module.exports = {
     index,
     new: newDrink,
     create: createDrink,
-    show
+    show,
+    delete: deleteDrink
 };

@@ -4,7 +4,7 @@ const Drink = require('../models/drink');
 
 
 async function createComment (req,res){ 
-    console.log(req.params.id);
+    //console.log(req.params.id);
     try {
         const foundDrink = await  Drink.findById(req.params.id);
         req.body.user = req.user._id;
@@ -53,9 +53,14 @@ function deleteComment(req,res){
     
 }
 
+function deleteTest(req,res){
+    res.send("comments");
+}
+
 
 
 module.exports = {
     create: createComment,
-    delete: deleteComment
+    delete: deleteComment,
+    deleteTest
 }

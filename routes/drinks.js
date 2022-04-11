@@ -9,5 +9,6 @@ router.get('/', drinkCtrl.index);
 router.get('/new', drinkCtrl.new);
 router.post('/', drinkCtrl.create);
 router.get('/:id', drinkCtrl.show);
+router.delete('/:id', drinkCtrl.delete);
 
 module.exports = router;

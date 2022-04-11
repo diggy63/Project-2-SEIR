@@ -15,7 +15,10 @@ const commentsSchema = new mongoose.Schema({
 
 const drinksSchema = new mongoose.Schema({
             name: String,
-            comments: [commentsSchema]
+            comments: [commentsSchema],
+            user: {type: Schema.Types.ObjectId, ref: 'User'},
+            userName: String,
+            userAvatar: String
 
 }, {
     timestamps: true
