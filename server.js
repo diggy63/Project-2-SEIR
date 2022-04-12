@@ -1,4 +1,5 @@
 const express = require('express');
+const multer  = require('multer');
 const path = require('path');
 const logger = require('morgan');
 const cookieParser = require('cookie-parser');
@@ -12,6 +13,22 @@ const commentRouter = require('./routes/comments');
 const ingredientsRouter = require('./routes/ingredients');
 // load the env consts
 require('dotenv').config();
+
+
+//set storage engine
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, './public/images');
+  },
+  filename: (req, file, cb)=>{
+    console.log(file);
+    cb(null, file.originalname + '-' +  Date.now() + '-' + path.extname(file.originalname))
+    console.log(file);
+    
+  }
+})
+
+const upload = multer({storage: storage})
 
 // create the Express app
 const app = express();
@@ -50,6 +67,11 @@ app.use(function (req, res, next) {
   // single ejs view
   next();
 });
+
+app.post('/upload', upload.single('image') ,(req,res) =>{
+  console.log(req.body);
+  res.redirect('/drinks');
+})
 
 // mount all routes with appropriate base paths
 app.use('/', ingredientsRouter);

@@ -1,4 +1,50 @@
 const Drink = require('../models/drink');
+const multer = require('multer');
+
+//define multer storage
+// const storage = multer.diskStorage({
+//     //destination for files
+//     destination: function(req, file, cb){
+//         cb(null, './public/uploads');
+//     },
+//     // adding a filer name
+//     filename: function(req,file, cb){
+//         cb(null, Date.now() + file.originalname)
+//     }
+// });
+
+// //upload paramaters for multer
+// const upload = multer({
+//     storage: storage,
+// })
+
+async function addPhoto(req, res){
+    try{
+    const newDrink = await Drink.findById(req.params.id);
+    newDrink.imageName = req.file.filename;
+    console.log(newDrink);
+    newDrink.save(function(err) {
+        res.redirect(`/drinks/${newDrink._id}`);  
+    })
+    }catch(error){
+
+    }
+}
+
+
+async function updatePhoto(req, res){
+    try{
+    const newDrink = await Drink.findById(req.params.id);
+    newDrink.imageName = req.file.filename;
+    console.log(newDrink);
+    newDrink.save(function(err) {
+        res.redirect(`/drinks/${newDrink._id}/edit`);  
+    })
+    }catch(error){
+
+    }
+}
+
 
 
 
@@ -20,8 +66,9 @@ function createDrink(req, res){
 	req.body.userName = req.user.name;
 	req.body.userAvatar = req.user.avatar;
     const newDrink = new Drink(req.body);
+    console.log(newDrink);
     newDrink.save(function(err){
-        res.render("drinks/description", {
+        res.render("drinks/makeDrink", {
             newDrink
         })
     })
@@ -44,6 +91,7 @@ function createDecription(req, res){
 
 function show(req,res){
     Drink.findById(req.params.id).populate("ingredients").exec(function(err, drink){
+        console.log(drink);
         res.render("drinks/show", {
             drink,
         })
@@ -61,7 +109,7 @@ function deleteDrink(req, res){
 function update(req,res){
     console.log(req.params.id);
     Drink.findById(req.params.id).populate("ingredients").exec(function(err, drink){
-        res.render("drinks/update", {
+        res.render("ingredients/update", {
             drink,
         })
 })
@@ -75,5 +123,7 @@ module.exports = {
     show,
     delete: deleteDrink,
     createDecription,
-    update
+    update,
+    addPhoto,
+    updatePhoto
 };

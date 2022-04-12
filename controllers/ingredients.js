@@ -36,7 +36,9 @@ async function addIngredients(req, res) {
                console.log("done");
           }
           drink.save(function (err) {
-               res.redirect("/drinks");
+               res.render("drinks/addPhoto", {
+                   drink
+               });
           });
           console.log("end");
      } catch (error) {}
@@ -64,6 +66,7 @@ async function update(req,res){
        res.redirect(`/drinks/${req.params.drinkId}/edit`);
     })
 }
+
 module.exports = {
      addNew,
      addIngredients,

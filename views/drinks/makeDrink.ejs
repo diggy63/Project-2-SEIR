@@ -1,0 +1,20 @@
+<%- include('../partials/header') %>
+<h1><%= newDrink.name %></h1>
+<h3>add ingredients <button id="addIngred">ADD</button></h3>
+<input type="text" name="adder" id="newLiq" />
+<input type="text" name="adder" id="newAmount" />
+<ul id="drink-display"></ul>
+<form
+     id="add-drink"
+     action="/drinks/<%= newDrink._id %>/addIngredients"
+     method="POST"
+>
+     <ul id="ingredientList"></ul>
+
+     <label> Describe Your Drink</label>
+     <input type="text" name="description" />
+     <br />
+     <input type="submit" value="Save Ingredients" />
+</form>
+
+<%- include('../partials/footer') %>

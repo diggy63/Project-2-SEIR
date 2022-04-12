@@ -21,7 +21,7 @@ const drinksSchema = new mongoose.Schema({
             userAvatar: String,
             description: String,
             ingredients: [{type: Schema.Types.ObjectId, ref: 'Ingredients'}],
-            amount: []
+            imageName: String
 
 }, {
     timestamps: true
