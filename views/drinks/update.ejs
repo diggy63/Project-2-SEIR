@@ -1,0 +1,37 @@
+<%- include('../partials/header') %>
+<div>
+     <h1><%=drink.name%></h1>
+     <h3><%= drink.description %></h3>
+     <% drink.ingredients.forEach(e => { %>
+     <h6><%= e.ingredients %> - <%= e.amount %></h6>
+     <form
+        id="Update-Ingredients"
+          action="/drinks/<%=drink._id%>/ingredients/<%=e._id %>?_method=PUT"
+          method="POST"
+     >
+          <input name="ingredients" value="<%=e.ingredients %>" />
+          <input name="amount" value="<%=e.amount %>" />
+          <button type="submit">Update</button>
+     </form>
+     <form
+          id="delete-ingredient"
+          action="/drinks/<%=drink._id%>/ingredients/<%=e._id%>?_method=DELETE"
+          method="POST"
+     >
+          <input type="submit" value="Delete" />
+     </form>
+     <br />
+     <% })%>
+     <form
+          id="add-ingredient"
+          action="/drinks/<%= drink._id %>/newIngredients"
+          method="POST"
+     >
+          <input type="text" name="ingredients" />
+          <input type="text" name="amount" />
+          <input type="submit" value="Add New Ingredient" />
+     </form>
+     <% if (user && user._id.equals(drink.user)) { %> <% } %>
+</div>
+
+<%- include('../partials/footer') %>

@@ -11,5 +11,6 @@ router.post('/', drinkCtrl.create);
 router.post('/:id', drinkCtrl.createDecription);
 router.get('/:id', drinkCtrl.show);
 router.delete('/:id', drinkCtrl.delete);
+router.get('/:id/edit', drinkCtrl.update);
 
 module.exports = router;

@@ -1,75 +1,72 @@
+const { resolveInclude } = require("ejs");
 const Drink = require("../models/drink");
 const Ingredient = require("../models/ingredient");
 
-function addNew(req, res) {
-     //console.log(req.body);
-     const newIngred = Ingredient(req.body);
-     Drink.findById(req.params.id, function (err, drink) {
-          newIngred.save(function (err) {
-               res.render(`drinks/addIngredient`, {
-                    drink,
-               });
-          });
-     });
-}
-
-
-
-function assignIngreds(drink, req){
-    drink.description = req.body.description;
-    let long = req.body.ingredients.length;
-     let temp = { ingredients: "", amount: "" };
-
-    if (typeof req.body.ingredients === "string") {
-        Ingredient.create(req.body, function (err, ingred) {
-             drink.ingredients.push(ingred._id);
-             drink.save(function (err) {
-                  res.redirect(`/drinks`);
-             });
-        });
-   }else {
-    for (i = 0; i < long; i++) {
-         temp.ingredients = req.body.ingredients[i];
-         temp.amount = req.body.amount[i];
-         Ingredient.create(temp, function (err, ingred) {
-             drink.ingredients.push(ingred._id);
-             console.log(drink.ingredients);
-             console.log("changing");
-         })
-     
+async function addNew(req, res) {
+    try {
+        const drink = await Drink.findById(req.params.id);
+        let createIngredOne = await Ingredient.create(req.body);
+        drink.ingredients.push(createIngredOne._id);
+        drink.save(function(error){
+            res.redirect(`/drinks/${req.params.id}/edit`);
+        })
+    } catch (error) {
+        
     }
-}
-console.log("end of function");
-return drink;
-
 }
 
 async function addIngredients(req, res) {
+     console.log(req.body);
      try {
-        const drink = await Drink.findById(req.params.id)
-        assignIngreds(drink, req).then(()=>{
-
-        
-        console.log(`${newDrink} did this get skipped`);
-            console.log(newDrink);
-            console.log(drink.ingredients);
-            newDrink.save(function (err) {
-            res.redirect(`/drinks`);
-            });
-        }).then(() => {
-            console.log("did this work");
-        })
-        console.log("did this work");
-        
-    
-
-     } catch (error) {
-         
-     }
+          const drink = await Drink.findById(req.params.id);
+          drink.description = req.body.description;
+          let long = req.body.ingredients.length;
+          let temp = { ingredients: "", amount: "" };
+          if (typeof req.body.ingredients === "string") {
+               let createIngredOne = await Ingredient.create(req.body);
+               drink.ingredients.push(createIngredOne._id);
+               console.log("save");
+          } else {
+               for (i = 0; i < long; i++) {
+                    temp.ingredients = req.body.ingredients[i];
+                    temp.amount = req.body.amount[i];
+                    let createIngred = await Ingredient.create(temp);
+                    drink.ingredients.push(createIngred._id);
+               }
+               console.log("done");
+          }
+          drink.save(function (err) {
+               res.redirect("/drinks");
+          });
+          console.log("end");
+     } catch (error) {}
 }
 
+async function deleteIngredient(req, res) {
+     try {
+         console.log(req.params.drinkId);
+          const deleteIngredient = await Drink.findById(req.params.drinkId);
+          deleteIngredient.ingredients.remove(req.params.id)
+          deleteIngredient.save(function(err){
+            res.redirect(`/drinks/${req.params.drinkId}/edit`);
+          })
+     } catch (error) {}
+}
 
+async function update(req,res){
+    // res.send(req.params)
+    // console.log("here");
+    const updateIngred = await Ingredient.findById(req.params.id);
+    console.log(updateIngred);
+    updateIngred.ingredients = req.body.ingredients;
+    updateIngred.amount = req.body.amount;
+    updateIngred.save(function(error){
+       res.redirect(`/drinks/${req.params.drinkId}/edit`);
+    })
+}
 module.exports = {
      addNew,
      addIngredients,
+     delete: deleteIngredient,
+     update
 };

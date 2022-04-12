@@ -58,7 +58,14 @@ function deleteDrink(req, res){
     })
 }
 
-
+function update(req,res){
+    console.log(req.params.id);
+    Drink.findById(req.params.id).populate("ingredients").exec(function(err, drink){
+        res.render("drinks/update", {
+            drink,
+        })
+})
+}
 
 
 module.exports = {
@@ -67,5 +74,6 @@ module.exports = {
     create: createDrink,
     show,
     delete: deleteDrink,
-    createDecription
+    createDecription,
+    update
 };

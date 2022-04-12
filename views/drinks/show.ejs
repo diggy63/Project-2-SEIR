@@ -3,12 +3,16 @@
 <h1> <%=drink.name%> </h1>
 <h3><%= drink.description %></h3>
 <% drink.ingredients.forEach(e => { %>
-    <%= e %> 
+    <h6><%= e.ingredients %> - <%= e.amount %></h6>
+    <br>
 
 <% }) %>
 <% if (user && user._id.equals(drink.user)) { %>
-    <form id="delete-comment" action="/drinks/<%=drink._id%>?_method=DELETE" method="POST">
-    <input type="submit" value="X">
+    <form id="delete-drink" action="/drinks/<%=drink._id%>?_method=DELETE" method="POST">
+    <input type="submit" value="Delete">
+    </form>
+    <form id="Update-drink" action="/drinks/<%=drink._id%>/edit">
+    <input type="submit" value="Update">
     </form>
  
 <% } %>
@@ -21,7 +25,7 @@
             <%= e.rating %>
         <% if (user && user._id.equals(e.user)) { %>
             <form id="delete-comment" action="/drinks/<%=drink._id%>/comments/<%=e._id%>?_method=DELETE" method="POST">
-            <input type="submit" value="X">
+            <input type="submit" value="Delete">
             </form>
          
         <% } %>
