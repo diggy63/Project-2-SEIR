@@ -1,5 +1,7 @@
 <%- include('../partials/header') %>
 <div> 
+    <div class="d-flex align-items-center flex-column">
+<div class="wrapper">
 <h1> <%=drink.name%> </h1>
 <h3><%= drink.description %></h3>
 <% drink.ingredients.forEach(e => { %>
@@ -7,7 +9,7 @@
     <br>
 
 <% }) %>
-<img src="/uploads/<%= drink.imageName %>" alt="image attached to Drink">
+<img class="frontPageImg" src="/uploads/<%= drink.imageName %>" alt="image attached to Drink">
 <% if (user && user._id.equals(drink.user)) { %>
     <form id="delete-drink" action="/drinks/<%=drink._id%>?_method=DELETE" method="POST">
     <input type="submit" value="Delete">
@@ -57,4 +59,7 @@
      <% } %>
 
 </form>
+</div>
+</div>
+</div>
 <%- include('../partials/footer') %>

@@ -20,10 +20,10 @@
           <title>Document</title>
      </head>
      <body>
-          <nav class="navbar fixed-top navbar-light bg-light">
+          <nav class="navbar fixed-top">
                <a class="navbar-brand" href="#">
                     <img
-                         src="../images/plane.png"
+                         src="../images/cocktail.png"
                          width="30"
                          height="30"
                          class="d-inline-block align-top"
@@ -34,32 +34,33 @@
                <ul class="nav justify-content-center">
                     <li class="nav-item">
                          <a class="nav-link" aria-current="page" href="/drinks"
-                              ><button class="btn btn-primary">
+                              ><button class="btn">
                                    Drinks
                               </button></a
                          >
                     </li>
-                    <li class="nav-item">
-                         <a class="nav-link" href="/drinks/new"
-                              ><button class="btn btn-primary">
-                                   Add A New Drink
-                              </button></a
-                         >
-                    </li>
+                    
                     <% if (!user) { %>
                      
                     
                     <li class="nav-item">
                       <a class="nav-link" href="/auth/google"
-                           ><button class="btn btn-primary">
+                           ><button class="btn btn">
                                 LOGIN
                            </button></a
                       >
                  </li>
                  <% }else { %>
                   <li class="nav-item">
+                    <a class="nav-link" href="/drinks/new"
+                         ><button class="btn">
+                              Add A New Drink
+                         </button></a
+                    >
+               </li>
+                  <li class="nav-item">
                     <a class="nav-link" href="/logout"
-                         ><button class="btn btn-primary">
+                         ><button class="btn btn">
                               LOG OUT
                          </button></a
                     >
@@ -68,7 +69,6 @@
                   <% } %> 
                </ul>
           </nav>
-
           <div class="marginHeader">
                <div class="bottombody">
                     <div class="contain">

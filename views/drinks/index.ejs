@@ -4,8 +4,16 @@
     <div class="row">
     <% drinks.forEach(function(d, i){ %>
      <div class="col">
-         <%= d.name %>
-        <a href="/drinks/<%= d.id%>"><button>details</button></a>
+        <div class="d-flex align-items-center flex-column">
+            <div class="wrapper">
+                <div class="d-flex align-items-center flex-column">
+                    <h3><%= d.name %></h3>
+         <img class="frontPageImg" src="/uploads/<%=d.imageName%>">
+
+        <a href="/drinks/<%= d.id%>"><button class="btn">details</button></a>
+        </div>
+    </div>
+        </div>
     </div>
     <% if ((i+1)%3 === 0) { %>
         <div class="row">

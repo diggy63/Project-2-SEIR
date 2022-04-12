@@ -1,6 +1,19 @@
 body{
   margin-top: 75px;
-  text-align: center;
+  background-color: #ccc5b9;
+}
+
+.navbar {
+  background-color: #252422;
+  justify-content: space-around;
+}
+.btn {
+  background-color: #fffcf2;
+}
+
+.btn:hover {
+  background-color: #eb5e28;
+  border-color: #090302;
 }
 
 .brand-logo {
@@ -25,7 +38,10 @@ body{
 }
 
 img {
-  max-width: 100px;
+
+
+
+  
 }
 
 .login {
@@ -41,4 +57,34 @@ img {
 
 #ingredientList{
   display: none;
+}
+
+.frontPageImg {
+  margin: 10px;
+  border-radius: 25px;
+  float: left;
+    width:  300px;
+    height: 300px;
+    object-fit: cover;
+}
+
+.contain {
+  color: aliceblue;
+  text-align: center;
+}
+
+.col {
+}
+.wrapper {
+  margin: 30px;
+  border-radius: 25px;
+  padding: 10px;
+  background-color: #403d39;
+}
+
+#typeDescription {
+    width: 400px;
+    height:200px;
+    font-size:14pt;
+
 }
