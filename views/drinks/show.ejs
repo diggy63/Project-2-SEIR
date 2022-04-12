@@ -1,6 +1,11 @@
 <%- include('../partials/header') %>
 <div> 
 <h1> <%=drink.name%> </h1>
+<h3><%= drink.description %></h3>
+<% drink.ingredients.forEach(e => { %>
+    <%= e %> 
+
+<% }) %>
 <% if (user && user._id.equals(drink.user)) { %>
     <form id="delete-comment" action="/drinks/<%=drink._id%>?_method=DELETE" method="POST">
     <input type="submit" value="X">

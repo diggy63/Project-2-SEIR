@@ -20,16 +20,30 @@ function createDrink(req, res){
 	req.body.userName = req.user.name;
 	req.body.userAvatar = req.user.avatar;
     const newDrink = new Drink(req.body);
-    console.log(newDrink);
     newDrink.save(function(err){
-        res.redirect("/drinks"); 
+        res.render("drinks/description", {
+            newDrink
+        })
     })
 }
 
-function show(req,res){
-    //console.log(req.params.id);
+function createDecription(req, res){
     Drink.findById(req.params.id, function(err, drink){
-        console.group(drink);
+        //console.log(req.body);
+        drink.description = req.body.description;
+        drink.save(function(err){
+            res.render(`drinks/addIngredient`, {
+                drink
+            });
+        })
+       //drink.description = req.body.description
+       
+    })
+
+}
+
+function show(req,res){
+    Drink.findById(req.params.id).populate("ingredients").exec(function(err, drink){
         res.render("drinks/show", {
             drink,
         })
@@ -52,5 +66,6 @@ module.exports = {
     new: newDrink,
     create: createDrink,
     show,
-    delete: deleteDrink
+    delete: deleteDrink,
+    createDecription
 };

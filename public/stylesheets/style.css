@@ -38,3 +38,6 @@ img {
   height: 30px;
 }
 
+#ingredientList{
+  display: none;
+}

@@ -18,7 +18,10 @@ const drinksSchema = new mongoose.Schema({
             comments: [commentsSchema],
             user: {type: Schema.Types.ObjectId, ref: 'User'},
             userName: String,
-            userAvatar: String
+            userAvatar: String,
+            description: String,
+            ingredients: [{type: Schema.Types.ObjectId, ref: 'Ingredients'}],
+            amount: []
 
 }, {
     timestamps: true
