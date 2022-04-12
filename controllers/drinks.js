@@ -22,7 +22,6 @@ async function addPhoto(req, res){
     try{
     const newDrink = await Drink.findById(req.params.id);
     newDrink.imageName = req.file.filename;
-    console.log(newDrink);
     newDrink.save(function(err) {
         res.redirect(`/drinks/${newDrink._id}`);  
     })
@@ -36,7 +35,6 @@ async function updatePhoto(req, res){
     try{
     const newDrink = await Drink.findById(req.params.id);
     newDrink.imageName = req.file.filename;
-    console.log(newDrink);
     newDrink.save(function(err) {
         res.redirect(`/drinks/${newDrink._id}/edit`);  
     })
@@ -62,11 +60,11 @@ function newDrink(req, res){
 }
 
 function createDrink(req, res){
+    req.body.name = req.body.name.toUpperCase();
     req.body.user = req.user._id;
 	req.body.userName = req.user.name;
 	req.body.userAvatar = req.user.avatar;
     const newDrink = new Drink(req.body);
-    console.log(newDrink);
     newDrink.save(function(err){
         res.render("drinks/makeDrink", {
             newDrink

@@ -1,7 +1,7 @@
 <%- include('../partials/header') %>
 <div> 
     <div class="d-flex align-items-center flex-column">
-<div class="wrapper">
+<div class="wrapperShow">
 <h1> <%=drink.name%> </h1>
 <h3><%= drink.description %></h3>
 <% drink.ingredients.forEach(e => { %>
@@ -59,7 +59,7 @@
      <% } %>
 
 </form>
-</div>
+    </div>
 </div>
 </div>
 <%- include('../partials/footer') %>

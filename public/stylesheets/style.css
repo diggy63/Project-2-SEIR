@@ -1,8 +1,11 @@
 body{
-  margin-top: 75px;
+  margin-top: 80px;
   background-color: #ccc5b9;
+  font-family: 'Acme', sans-serif;
 }
-
+h1{
+  color: #252422;
+}
 .navbar {
   background-color: #252422;
   justify-content: space-around;
@@ -63,8 +66,8 @@ img {
   margin: 10px;
   border-radius: 25px;
   float: left;
-    width:  300px;
-    height: 300px;
+    width:  200px;
+    height: 200px;
     object-fit: cover;
 }
 
@@ -76,6 +79,14 @@ img {
 .col {
 }
 .wrapper {
+  margin: 30px;
+  border-radius: 25px;
+  padding: 10px;
+  background-color: #403d39;
+}
+
+.wrapperShow {
+  width: 70%;
   margin: 30px;
   border-radius: 25px;
   padding: 10px;
