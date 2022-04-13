@@ -6,6 +6,9 @@ body{
 h1{
   color: #252422;
 }
+form {
+  width: 100;
+}
 .navbar {
   background-color: #252422;
   justify-content: space-around;
@@ -71,6 +74,16 @@ img {
     object-fit: cover;
 }
 
+.showImg {
+  margin: 10px;
+  border-radius: 100%;
+  float: none;
+    width:  150px;
+    height: 150px;
+    object-fit: cover;
+
+}
+
 .contain {
   color: aliceblue;
   text-align: center;
@@ -86,11 +99,14 @@ img {
 }
 
 .wrapperShow {
+  display: flex;
+  flex-direction: column;
   width: 70%;
   margin: 30px;
   border-radius: 25px;
   padding: 10px;
   background-color: #403d39;
+  max-width: 600px;
 }
 
 #typeDescription {
@@ -99,3 +115,70 @@ img {
     font-size:14pt;
 
 }
+ #showTop{
+   background-color: #252422;
+   border-top-left-radius: 25px;
+   border-top-right-radius: 25px;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+ }
+
+ #titleShow {
+   font-size: 40px;
+   margin-right: 50px;
+ }
+
+ #ingredientsShow{
+   border-style: solid;
+   border-color: #ccc5b9;
+   text-align: left;
+ }
+
+ 
+ #ingredientBox{
+   font-size: 30px;
+  background-color:#090302;
+ }
+
+ #descriptionShow {
+  border-top:0em;
+  border-style: solid;
+  border-color: #ccc5b9;
+ }
+ #flex-row {
+   margin-top: 20px;
+   display: flex;
+   justify-content: space-evenly;
+ }
+ #flex-column-width {
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 90%;
+}
+#flex-column {
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+
+ #commentAddSection{
+   padding: 10px;
+   border-radius: 25px;
+   background-color: #403d39;
+   width: 70%;
+   max-width: 600px;
+ }
+
+ #flex {
+   display: flex;
+ }
+
+ #commentAdd{
+   display: flex;
+   justify-content: space-evenly;
+ }

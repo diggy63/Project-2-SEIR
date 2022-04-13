@@ -2,22 +2,37 @@
 <div> 
     <div class="d-flex align-items-center flex-column">
 <div class="wrapperShow">
-<h1> <%=drink.name%> </h1>
-<h3><%= drink.description %></h3>
+    <div id="showTop">
+        <img class="showImg" src="/uploads/<%= drink.imageName %>" alt="image attached to Drink">
+        <div id="titleShow"> <%=drink.name%></div>
+    </div>
+    <div id="showBot">
+
+<div id="ingredientsShow">
+<div id="ingredientBox">Ingredients</div>
+<ul>
 <% drink.ingredients.forEach(e => { %>
+    <li>
     <h6><%= e.ingredients %> - <%= e.amount %></h6>
-    <br>
+    </li>
 
 <% }) %>
-<img class="frontPageImg" src="/uploads/<%= drink.imageName %>" alt="image attached to Drink">
+</ul>
+
+</div>
+<div id="descriptionShow">
+<h3><%= drink.description %></h3>
+</div>
 <% if (user && user._id.equals(drink.user)) { %>
+    <div id="flex-row">
     <form id="delete-drink" action="/drinks/<%=drink._id%>?_method=DELETE" method="POST">
     <input type="submit" value="Delete">
     </form>
     <form id="Update-drink" action="/drinks/<%=drink._id%>/edit">
     <input type="submit" value="Update">
     </form>
- 
+    </div>
+</div>
 <% } %>
 </div>
     <ul>
@@ -27,6 +42,7 @@
             <br>
             <%= e.rating %>
         <% if (user && user._id.equals(e.user)) { %>
+            
             <form id="delete-comment" action="/drinks/<%=drink._id%>/comments/<%=e._id%>?_method=DELETE" method="POST">
             <input type="submit" value="Delete">
             </form>
@@ -38,27 +54,34 @@
     </ul>
 <% if (user) { %>
  
-
-<form id="add-review-form" method="POST" action="/drinks/<%=drink._id%>/comments">
-    <label>Comment:</label>
-    <textarea name="content"></textarea>
-    <label>Rating:</label>
-     <select name="rating">
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-          <option value="6">6</option>
-          <option value="7">7</option>
-          <option value="8">8</option>
-          <option value="9">9</option>
-          <option value="10">10</option>
-     </select>
+<div id="commentAddSection">
+<form method="POST" action="/drinks/<%=drink._id%>/comments">
+    <div id="commentAdd">
+            <div id="flex-column-width">Comment:
+                <textarea name="content"></textarea>
+            </div>
+            <div id="flex-column">Rating:
+                <select name="rating">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+               </select>
+            </div>
+        </div>
      <input type="submit" value="Add Comment">
+</form>
+
+
      <% } %>
 
-</form>
+
     </div>
 </div>
 </div>

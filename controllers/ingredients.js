@@ -56,8 +56,6 @@ async function deleteIngredient(req, res) {
 }
 
 async function update(req,res){
-    // res.send(req.params)
-    // console.log("here");
     const updateIngred = await Ingredient.findById(req.params.id);
     console.log(updateIngred);
     updateIngred.ingredients = req.body.ingredients;
