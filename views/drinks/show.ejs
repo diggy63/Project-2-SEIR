@@ -50,7 +50,7 @@
           <ul id="commentAddSection-no-bg-color">
                <% drink.comments.forEach(e => { %>
                <div id="commentAddSectionMax">
-                    <li>
+                    <li id="commentList">
                          <div id="flex-row">
                               <div id="flex-column-avatar">
                                    <img
@@ -64,12 +64,12 @@
                                    <table>
                                     <tbody>
                                         <tr>
+                                            <td>rating</td>
                                              <td></td>
-                                             <td>rating</td>
                                         </tr>
                                              <tr>
+                                                <td><%= e.rating %></td>
                                                   <td><%= e.content %></td>
-                                                  <td><%= e.rating %></td>
                                              </tr>
                                         </tbody>
                                    </table>
@@ -82,11 +82,12 @@
                               action="/drinks/<%=drink._id%>/comments/<%=e._id%>?_method=DELETE"
                               method="POST"
                          >
-                              <input type="submit" value="Delete" />
+                              <input class="btn" type="submit" value="Delete" />
                          </form>
 
                          <% } %>
                     </li>
+                    <br>
                </div>
                <% }) %>
           </ul>
@@ -94,7 +95,7 @@
 
           <div id="commentAddSection">
                <form method="POST" action="/drinks/<%=drink._id%>/comments">
-                    <div id="commentAdd">
+                    <div id="commentAddContentBox">
                          <div id="flex-column-width">
                               Comment:
                               <textarea name="content"></textarea>

@@ -16,9 +16,9 @@ async function addNew(req, res) {
 }
 
 async function addIngredients(req, res) {
-     console.log(req.body);
      try {
           const drink = await Drink.findById(req.params.id);
+          drink.imageName = req.file.filename;
           drink.description = req.body.description;
           let long = req.body.ingredients.length;
           let temp = { ingredients: "", amount: "" };

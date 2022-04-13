@@ -28,7 +28,7 @@ function addIngredient(e){
 
     
     const newDisEl = document.createElement("li");
-    const text = document.createTextNode(valEl);
+    const text = document.createTextNode(`Ingredient: ${valEl}   Amount: ${valAmount}`);
     newDisEl.appendChild(text);
     ingredDisplay.appendChild(newDisEl);
 }
