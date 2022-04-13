@@ -1,88 +1,125 @@
 <%- include('../partials/header') %>
-<div> 
-    <div class="d-flex align-items-center flex-column">
-<div class="wrapperShow">
-    <div id="showTop">
-        <img class="showImg" src="/uploads/<%= drink.imageName %>" alt="image attached to Drink">
-        <div id="titleShow"> <%=drink.name%></div>
-    </div>
-    <div id="showBot">
+<div>
+     <div class="d-flex align-items-center flex-column">
+          <div class="wrapperShow">
+               <div id="showTop">
+                    <img
+                         class="showImg"
+                         src="/uploads/<%= drink.imageName %>"
+                         alt="image attached to Drink"
+                    />
+                    <div id="titleShow"><%=drink.name%></div>
+               </div>
+               <div id="showBot">
+                    <div id="ingredientsShow">
+                         <div id="ingredientBox">Ingredients</div>
+                         <ul>
+                              <% drink.ingredients.forEach(e => { %>
+                              <li>
+                                   <h6>
+                                        <%= e.ingredients %> - <%= e.amount %>
+                                   </h6>
+                              </li>
 
-<div id="ingredientsShow">
-<div id="ingredientBox">Ingredients</div>
-<ul>
-<% drink.ingredients.forEach(e => { %>
-    <li>
-    <h6><%= e.ingredients %> - <%= e.amount %></h6>
-    </li>
+                              <% }) %>
+                         </ul>
+                    </div>
+                    <div id="descriptionShow">
+                         <h3><%= drink.description %></h3>
+                    </div>
+                    <% if (user && user._id.equals(drink.user)) { %>
+                    <div id="flex-row">
+                         <form
+                              id="delete-drink"
+                              action="/drinks/<%=drink._id%>?_method=DELETE"
+                              method="POST"
+                         >
+                              <input type="submit" value="Delete" />
+                         </form>
+                         <form
+                              id="Update-drink"
+                              action="/drinks/<%=drink._id%>/edit"
+                         >
+                              <input type="submit" value="Update" />
+                         </form>
+                    </div>
 
-<% }) %>
-</ul>
+                    <% } %>
+               </div>
+          </div>
+          <ul id="commentAddSection-no-bg-color">
+               <% drink.comments.forEach(e => { %>
+               <div id="commentAddSectionMax">
+                    <li>
+                         <div id="flex-row">
+                              <div id="flex-column-avatar">
+                                   <img
+                                        class="avatarImg"
+                                        alt="avatar"
+                                        src="<%= e.userAvatar %>"
+                                   />
+                                   <%=e.userName%>
+                              </div>
+                              <div id="commentContent">
+                                   <table>
+                                    <tbody>
+                                        <tr>
+                                             <td></td>
+                                             <td>rating</td>
+                                        </tr>
+                                             <tr>
+                                                  <td><%= e.content %></td>
+                                                  <td><%= e.rating %></td>
+                                             </tr>
+                                        </tbody>
+                                   </table>
+                              </div>
+                         </div>
+                         <% if (user && user._id.equals(e.user)) { %>
 
-</div>
-<div id="descriptionShow">
-<h3><%= drink.description %></h3>
-</div>
-<% if (user && user._id.equals(drink.user)) { %>
-    <div id="flex-row">
-    <form id="delete-drink" action="/drinks/<%=drink._id%>?_method=DELETE" method="POST">
-    <input type="submit" value="Delete">
-    </form>
-    <form id="Update-drink" action="/drinks/<%=drink._id%>/edit">
-    <input type="submit" value="Update">
-    </form>
-    </div>
-</div>
-<% } %>
-</div>
-    <ul>
-        <% drink.comments.forEach(e => { %>
-         <li>
-            <%= e.content %>
-            <br>
-            <%= e.rating %>
-        <% if (user && user._id.equals(e.user)) { %>
-            
-            <form id="delete-comment" action="/drinks/<%=drink._id%>/comments/<%=e._id%>?_method=DELETE" method="POST">
-            <input type="submit" value="Delete">
-            </form>
-         
-        <% } %>
+                         <form
+                              id="delete-comment"
+                              action="/drinks/<%=drink._id%>/comments/<%=e._id%>?_method=DELETE"
+                              method="POST"
+                         >
+                              <input type="submit" value="Delete" />
+                         </form>
 
-         </li>
-        <% }) %>
-    </ul>
-<% if (user) { %>
- 
-<div id="commentAddSection">
-<form method="POST" action="/drinks/<%=drink._id%>/comments">
-    <div id="commentAdd">
-            <div id="flex-column-width">Comment:
-                <textarea name="content"></textarea>
-            </div>
-            <div id="flex-column">Rating:
-                <select name="rating">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                    <option value="9">9</option>
-                    <option value="10">10</option>
-               </select>
-            </div>
-        </div>
-     <input type="submit" value="Add Comment">
-</form>
+                         <% } %>
+                    </li>
+               </div>
+               <% }) %>
+          </ul>
+          <% if (user) { %>
 
+          <div id="commentAddSection">
+               <form method="POST" action="/drinks/<%=drink._id%>/comments">
+                    <div id="commentAdd">
+                         <div id="flex-column-width">
+                              Comment:
+                              <textarea name="content"></textarea>
+                         </div>
+                         <div id="flex-column">
+                              Rating:
+                              <select name="rating">
+                                   <option value="1">1</option>
+                                   <option value="2">2</option>
+                                   <option value="3">3</option>
+                                   <option value="4">4</option>
+                                   <option value="5">5</option>
+                                   <option value="6">6</option>
+                                   <option value="7">7</option>
+                                   <option value="8">8</option>
+                                   <option value="9">9</option>
+                                   <option value="10">10</option>
+                              </select>
+                         </div>
+                    </div>
+                    <input type="submit" value="Add Comment" />
+               </form>
 
-     <% } %>
-
-
-    </div>
-</div>
+               <% } %>
+          </div>
+     </div>
 </div>
 <%- include('../partials/footer') %>
