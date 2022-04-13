@@ -19,7 +19,6 @@ async function addIngredients(req, res) {
      try {
           const drink = await Drink.findById(req.params.id);
           drink.imageName = req.file.filename;
-          drink.description = req.body.description;
           let long = req.body.ingredients.length;
           let temp = { ingredients: "", amount: "" };
           if (typeof req.body.ingredients === "string") {
@@ -36,9 +35,7 @@ async function addIngredients(req, res) {
                console.log("done");
           }
           drink.save(function (err) {
-               res.render("drinks/addPhoto", {
-                   drink
-               });
+               res.redirect(`/drinks/${drink._id}`)
           });
           console.log("end");
      } catch (error) {}

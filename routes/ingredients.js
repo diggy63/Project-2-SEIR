@@ -28,7 +28,7 @@ const upload = multer({
 
 
 router.post('/drinks/:id/newIngredients', ingrdCtrl.addNew);
-router.post('/drinks/:id/addIngredients',upload.single('image'), ingrdCtrl.addIngredients);
+router.post('/drinks/:id/addIngredients', upload.single('image'), ingrdCtrl.addIngredients);
 router.delete('/drinks/:drinkId/ingredients/:id', ingrdCtrl.delete);
 router.put('/drinks/:drinkId/ingredients/:id', ingrdCtrl.update);
 module.exports = router;
