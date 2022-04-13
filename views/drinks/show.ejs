@@ -28,19 +28,19 @@
                          <h3><%= drink.description %></h3>
                     </div>
                     <% if (user && user._id.equals(drink.user)) { %>
-                    <div id="flex-row">
+                    <div id="flex-row-userCrud">
                          <form
                               id="delete-drink"
                               action="/drinks/<%=drink._id%>?_method=DELETE"
                               method="POST"
                          >
-                              <input type="submit" value="Delete" />
+                              <input class="btn" type="submit" value="Delete" />
                          </form>
                          <form
                               id="Update-drink"
                               action="/drinks/<%=drink._id%>/edit"
                          >
-                              <input type="submit" value="Update" />
+                              <input class="btn" type="submit" value="Update" />
                          </form>
                     </div>
 
@@ -115,7 +115,7 @@
                               </select>
                          </div>
                     </div>
-                    <input type="submit" value="Add Comment" />
+                    <input class="btn" type="submit" value="Add Comment" />
                </form>
 
                <% } %>
