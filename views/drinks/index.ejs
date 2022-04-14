@@ -1,5 +1,4 @@
 <%- include('../partials/header') %>
-    <h1>Cocktail Lounge</h1>
     <div class="container-fluid">
     <% drinks.forEach(function(d, i){ %>
         <% if ((i+1)%3 === 1) { %>
@@ -10,7 +9,7 @@
             <div class="wrapper">
                 <div id="innerContent">
                 <div class="d-flex align-items-center flex-column">
-                    <h3><%= d.name %></h3>
+                    <div class="drinkTitle"><%= d.name %></div>
          <img class="frontPageImg" src="/uploads/<%=d.imageName%>">
 
         <a href="/drinks/<%= d.id%>"><button class="btn">VIEW</button></a>

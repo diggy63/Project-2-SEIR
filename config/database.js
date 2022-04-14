@@ -2,8 +2,8 @@ const mongoose = require('mongoose');
 
 // replace your database connection string here
 //that the code for release database
-mongoose.connect(process.env.DATABASE_URL,{ 
-// mongoose.connect('mongodb://localhost/drinks9', {
+// mongoose.connect(process.env.DATABASE_URL,{ 
+mongoose.connect('mongodb://localhost/drinks9', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useCreateIndex: true

@@ -44,6 +44,10 @@ input {
 ul{
      margin-top: 4px;
 }
+
+.redText{
+     color: #eb5e28;
+}
 .marginHeader, .bottombody, .contain{
      height: 100%;
 }
@@ -52,6 +56,7 @@ ul{
      justify-content: space-around;
 }
 .btn {
+     margin: 10px;
      background-color: #fffcf2;
 }
 
@@ -92,8 +97,8 @@ ul{
   margin: 10px;
   border-radius: 25px;
   float: left;
-  width: 200px;
-  height: 200px;
+  width: 300px;
+  height: 300px;
   object-fit: cover;
 }
 
@@ -151,6 +156,7 @@ ul{
      border-radius: 25px;
      padding: 10px;
      background-color: #403d39;
+     max-width: 400px;
 }
 
 .wrapperShow {
@@ -221,8 +227,7 @@ ul{
   border-radius: 25px;
   padding: 10px;
   background-color: #403d39;
-  max-width: 500px;
-  max-height: 240px;
+  max-width: 600px;
 }
 
 .leftWrapper{
@@ -280,6 +285,14 @@ ul{
 #titleShow {
      font-size: 40px;
      margin-right: 50px;
+}
+
+.websiteTitle{
+     color: #ccc5b9;
+     font-size: 60px;
+}
+.drinkTitle{
+     font-size: 36px;
 }
 
 #ingredientsShow {
@@ -422,6 +435,9 @@ ul{
   margin-bottom: 10px;
 }
 
+#delte-comment{
+     margin: 10px;
+}
 #ingredientsMake {
   border-style: solid;
   border-color: #ccc5b9;
@@ -431,3 +447,16 @@ ul{
   border-left: 0em;
 
 }
+.deleteForm{
+     margin-bottom: 100px;
+     height: 100%;
+}
+
+@media(max-width: 768px) {
+     h1 {
+       font-size: 10px;
+     }
+     textarea{
+          width: 100px;
+             }
+   }
