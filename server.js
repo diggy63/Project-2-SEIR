@@ -11,6 +11,7 @@ const indexRoutes = require('./routes/index');
 const drinksRouter = require('./routes/drinks');
 const commentRouter = require('./routes/comments');
 const ingredientsRouter = require('./routes/ingredients');
+const descriptionsRouter = require('./routes/descriptions');
 // load the env consts
 require('dotenv').config();
 
@@ -74,6 +75,7 @@ app.post('/upload', upload.single('image') ,(req,res) =>{
 })
 
 // mount all routes with appropriate base paths
+app.use('/', descriptionsRouter);
 app.use('/', ingredientsRouter);
 app.use('/', commentRouter);
 app.use('/', indexRoutes);

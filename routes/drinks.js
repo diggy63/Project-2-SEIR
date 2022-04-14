@@ -23,7 +23,7 @@ const upload = multer({
 // The root route renders our only view
 
 
-
+router.put('/:id/description', drinkCtrl.updateDescription);
 router.post('/:id/upload', upload.single('image'), drinkCtrl.addPhoto);
 router.put('/:id/upload', upload.single('image'), drinkCtrl.updatePhoto);
 router.get('/', drinkCtrl.index);

@@ -147,6 +147,12 @@ function update(req, res) {
           });
 }
 
+function updateDescription(req,res){
+    console.log(req.body);
+    res.send("we here");
+    //res.redirect(`/drinks/${req.params.id}`);
+}
+
 module.exports = {
      index,
      new: newDrink,
@@ -157,4 +163,5 @@ module.exports = {
      update,
      addPhoto,
      updatePhoto,
+     updateDescription
 };

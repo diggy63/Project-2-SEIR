@@ -87,6 +87,16 @@ img {
   height: 150px;
   object-fit: cover;
 }
+
+.imgUpdate {
+  margin: 10px;
+  border-radius: 25%;
+  float: none;
+  width: 400px;
+  height: 400px;
+  object-fit: cover;
+
+}
 .login {
      display: flex;
      justify-content: center;
@@ -127,6 +137,33 @@ img {
      max-width: 600px;
 }
 .wrapperNewDrink{
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  margin: 30px;
+  border-radius: 25px;
+  padding: 10px;
+  background-color: #403d39;
+  max-width: 600px;
+}
+.wholeWrapperUpdate{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.leftWrapperUpdate{
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  margin: 30px;
+  border-radius: 25px;
+  padding: 10px;
+  background-color: #403d39;
+  max-width: 600px;
+}
+
+.rightWrapperUpdate{
   display: flex;
   flex-direction: column;
   width: 70%;
@@ -187,7 +224,14 @@ img {
 #typeDescription {
      width: 400px;
      height: 200px;
+  
      font-size: 14pt;
+}
+
+#typeDescriptionUpdate {
+  width: 400px;
+  height: 100px;
+  font-size: 14pt;
 }
 #showTop {
      background-color: #252422;
@@ -220,6 +264,15 @@ img {
     padding-left: 10px;
      font-size: 30px;
      background-color: #090302;
+}
+.ingredientBoxBorderTopBottom {
+  padding-left: 10px;
+   font-size: 30px;
+   background-color: #090302;
+   border-left: 0em;
+   border-right: 0em;
+   border-style: solid;
+    border-color: #ccc5b9;
 }
 
 #descriptionShow {

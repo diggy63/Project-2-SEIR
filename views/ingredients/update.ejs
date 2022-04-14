@@ -1,6 +1,22 @@
 <%- include('../partials/header') %>
-     <h1><%=drink.name%></h1>
-     <h3><%= drink.description %></h3>
+<div class="wholeWrapperUpdate">
+<div class="leftWrapperUpdate">
+     <div id="innerContent">
+     <div id="title"><%=drink.name%></div>
+     <h3>Description</h3>
+     <%= drink.description %>
+     <form id="update-description"
+     action="/drinks/<%=drink._id%>/descriptions?_method=PUT"
+     method="POST">
+          <textarea
+                         id="typeDescriptionUpdate"
+                         type="text"
+                         name="description"
+                    ></textarea>
+          <button class="btn" type="submit">Update Description</button>
+     </form>
+     </form>
+     <div class="ingredientBoxBorderTopBottom">Ingredients</div>
      <% drink.ingredients.forEach(e => { %>
      <h6><%= e.ingredients %> - <%= e.amount %></h6>
      <form
@@ -10,14 +26,14 @@
      >
           <input name="ingredients" value="<%=e.ingredients %>" />
           <input name="amount" value="<%=e.amount %>" />
-          <button type="submit">Update</button>
+          <button class="btn" type="submit">Update</button>
      </form>
      <form
           id="delete-ingredient"
           action="/drinks/<%=drink._id%>/ingredients/<%=e._id%>?_method=DELETE"
           method="POST"
      >
-          <input type="submit" value="Delete" />
+          <input class="btn" type="submit" value="Delete" />
      </form>
      <br />
      <% })%>
@@ -28,17 +44,23 @@
      >
           <input type="text" name="ingredients" />
           <input type="text" name="amount" />
-          <input type="submit" value="Add New Ingredient" />
+          <input class="btn" type="submit" value="Add New Ingredient" />
      </form>
-     <% if (user && user._id.equals(drink.user)) { %> <% } %>
-
+     </div>
+</div>
+<div class="rightWrapperUpdate">
+     <div id="innerContent">
      <% if (drink.imageName) { %>
-          <img src="/uploads/<%=drink.imageName%>" alt="image attached to Drink">
+          <img class="imgUpdate" src="/uploads/<%=drink.imageName%>" alt="image attached to Drink">
       <% } %>
           <form method="POST" action="/drinks/<%= drink._id %>/upload?_method=PUT" enctype="multipart/form-data">
               <input type="file" name="image">
               <button type="sumbit">Change Photo</button>
           </form>
 
+
+     </div>
+</div>
+</div>
 
 <%- include('../partials/footer') %>
