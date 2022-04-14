@@ -329,10 +329,13 @@ ul{
      justify-content: center;
      align-items: center;
      height: 100%;
+     width: 100%;
 }
 
 .frontfont{
+     width: 60%;
      font-size: 80px;
+     color: #252422;
 }
 #flex {
   display: flex;
