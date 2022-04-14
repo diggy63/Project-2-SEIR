@@ -3,8 +3,28 @@ const ulElement = document.querySelector('#ingredientList');
 const newIngredAdd = document.querySelector('#newLiq');
 const newAmountAdd = document.querySelector('#newAmount');
 const ingredDisplay = document.querySelector('#drink-display');
+const getAll = document.querySelectorAll('.row');
+const wholeDoc = document.querySelector('.contain');
 
+
+// if(getAll.length > 0 ){
+//     document.body.style.backgroundImage = "url('')";
+// }
+if(getAll.length > 2){
+    let count = getAll.length - 2
+    let startHeight = 1300;
+    for(let i = count; i>0; i-- ){
+        startHeight = startHeight + 300;
+        console.log("grow");
+        wholeDoc.style.height = `${startHeight}px`;
+    }
+}
+
+console.log(wholeDoc.clientHeight);
+
+if(addI){
 addI.addEventListener("click", addIngredient);
+}
 
 function addIngredient(e){
     const valEl = newIngredAdd.value;
@@ -32,4 +52,3 @@ function addIngredient(e){
     newDisEl.appendChild(text);
     ingredDisplay.appendChild(newDisEl);
 }
-

@@ -16,9 +16,9 @@
                          <ul>
                               <% drink.ingredients.forEach(e => { %>
                               <li>
-                                   <h6>
+                                   <h4>
                                         <%= e.ingredients %> - <%= e.amount %>
-                                   </h6>
+                                   </h4>
                               </li>
 
                               <% }) %>
@@ -51,7 +51,7 @@
                <% drink.comments.forEach(e => { %>
                <div id="commentAddSectionMax">
                     <li id="commentList">
-                         <div id="flex-row">
+                         <div id="flex-row-comment">
                               <div id="flex-column-avatar">
                                    <img
                                         class="avatarImg"
