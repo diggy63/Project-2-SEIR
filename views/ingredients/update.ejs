@@ -3,7 +3,7 @@
 <div class="leftWrapperUpdate">
      <div id="innerContent">
      <div id="title"><%=drink.name%></div>
-     <h3>Description</h3>
+     <div class="ingredientBoxBorderTopBottom">Description</div>
      <%= drink.description %>
      <form id="update-description"
      action="/drinks/<%=drink._id%>/descriptions?_method=PUT"
@@ -13,12 +13,13 @@
                          type="text"
                          name="description"
                     ></textarea>
+                    <br>
           <button class="btn" type="submit">Update Description</button>
      </form>
      </form>
      <div class="ingredientBoxBorderTopBottom">Ingredients</div>
      <% drink.ingredients.forEach(e => { %>
-     <h6><%= e.ingredients %> - <%= e.amount %></h6>
+     <h3><%= e.ingredients %> - <%= e.amount %></h3>
      <form
         id="Update-Ingredients"
           action="/drinks/<%=drink._id%>/ingredients/<%=e._id %>?_method=PUT"
