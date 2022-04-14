@@ -34,6 +34,28 @@
 <p align="center">
   This is the main page CRUD Page it can basically do all CRUD Actions
   </p>
-
-
-https://trello.com/b/GFbahP7I/project-2-cocktails-board
+  
+  <h1 align="center">Technologies Used</h1>
+<p align="center">
+  HTML
+    <br>
+    CSS
+    <br>
+    JS
+    <br>
+    MONGODB
+    <br>
+    MONGOOSE
+    <br>
+    ATLAS
+    <br>
+  </p>
+   <h1 align="center">Getting Started</h1>
+<p align="center">
+    <a href="https://cocktail-lounge-dk.herokuapp.com/">CLICK TO PLAY</a>
+    <br>
+    <a href="https://trello.com/b/GFbahP7I/project-2-cocktails-board">Here's My Trello</a>
+    <p>
+  <h1 align="center">Icebox</h1>
+<p align="center">
+    <p>
