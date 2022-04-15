@@ -4,7 +4,7 @@
      <div id="innerContent">
      <div id="title"><%=drink.name%></div>
      <div class="ingredientBoxBorderTopBottom">Description</div>
-     <%= drink.description %>
+     <p><%= drink.description %></p>
      <form id="update-description"
      action="/drinks/<%=drink._id%>/descriptions?_method=PUT"
      method="POST">
