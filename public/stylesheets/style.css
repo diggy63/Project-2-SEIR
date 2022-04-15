@@ -1,4 +1,5 @@
-body, html {
+body,
+html {
      height: 100%;
      margin: 0;
      font-family: "Acme", sans-serif;
@@ -12,13 +13,13 @@ body {
      background-color: #ccc5b9;
      font-family: "Acme", sans-serif;
      margin: 0px 0px;
-	height: 100%;
+     height: 100%;
      background-repeat: no-repeat;
      background-attachment: fixed;
 }
 * {
      box-sizing: border-box;
- }
+}
 h1 {
      color: #252422;
 }
@@ -27,28 +28,30 @@ form {
 }
 
 label {
-  font-size: 20px;
-  margin: 5px;
+     font-size: 20px;
+     margin: 5px;
 }
 
-textarea{
-  border-radius: 25px;
-  padding: 10px;
+textarea {
+     border-radius: 25px;
+     padding: 10px;
 }
 
 input {
-  border-radius: 15px;
-  padding: 5px;
+     border-radius: 15px;
+     padding: 5px;
 }
 
-ul{
+ul {
      margin-top: 4px;
 }
 
-.redText{
+.redText {
      color: #eb5e28;
 }
-.marginHeader, .bottombody, .contain{
+.marginHeader,
+.bottombody,
+.contain {
      height: 100%;
 }
 .navbar {
@@ -86,39 +89,37 @@ ul{
      margin-top: -5px;
 }
 
-
 .avatarImg {
-  height: 50px;
-  width: 50px;
-  border-radius: 100%;
+     height: 50px;
+     width: 50px;
+     border-radius: 100%;
 }
 
 .frontPageImg {
-  margin: 10px;
-  border-radius: 25px;
-  float: left;
-  width: 250px;
-  height: 250px;
-  object-fit: cover;
+     margin: 10px;
+     border-radius: 25px;
+     float: left;
+     width: 300px;
+     height: 300px;
+     object-fit: cover;
 }
 
 .showImg {
-  margin: 10px;
-  border-radius: 100%;
-  float: none;
-  width: 150px;
-  height: 150px;
-  object-fit: cover;
+     margin: 10px;
+     border-radius: 100%;
+     float: none;
+     width: 150px;
+     height: 150px;
+     object-fit: cover;
 }
 
 .imgUpdate {
-  margin: 10px;
-  border-radius: 25%;
-  float: none;
-  width: 400px;
-  height: 400px;
-  object-fit: cover;
-
+     margin: 10px;
+     border-radius: 25%;
+     float: none;
+     width: 400px;
+     height: 400px;
+     object-fit: cover;
 }
 .login {
      display: flex;
@@ -140,13 +141,11 @@ ul{
      justify-content: center;
 }
 
-
-
 .contain {
      width: 80%;
      color: aliceblue;
      text-align: center;
-     background-color: rgba(204,197,185, 0.8);
+     background-color: rgba(204, 197, 185, 0.8);
      padding-top: 100px;
      height: 1600px;
 }
@@ -169,102 +168,101 @@ ul{
      background-color: #403d39;
      max-width: 600px;
 }
-.wrapperNewDrink{
-  display: flex;
-  flex-direction: column;
-  width: 70%;
-  margin: 30px;
-  border-radius: 25px;
-  padding: 10px;
-  background-color: #403d39;
-  max-width: 600px;
+.wrapperNewDrink {
+     display: flex;
+     flex-direction: column;
+     width: 70%;
+     margin: 30px;
+     border-radius: 25px;
+     padding: 10px;
+     background-color: #403d39;
+     max-width: 600px;
 }
-.wholeWrapperUpdate{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-}
-
-.leftWrapperUpdate{
-  display: flex;
-  flex-direction: column;
-  width: 70%;
-  margin: 30px;
-  border-radius: 25px;
-  padding: 10px;
-  background-color: #403d39;
-  max-width: 600px;
+.wholeWrapperUpdate {
+     display: flex;
+     flex-direction: row;
+     justify-content: space-evenly;
 }
 
-.rightWrapperUpdate{
-  display: flex;
-  flex-direction: column;
-  width: 70%;
-  margin: 30px;
-  border-radius: 25px;
-  padding: 10px;
-  background-color: #403d39;
-  max-width: 600px;
-  max-height: 550px;
+.leftWrapperUpdate {
+     display: flex;
+     flex-direction: column;
+     width: 70%;
+     margin: 30px;
+     border-radius: 25px;
+     padding: 10px;
+     background-color: #403d39;
+     max-width: 600px;
 }
 
-.wrapperIngredients{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
+.rightWrapperUpdate {
+     display: flex;
+     flex-direction: column;
+     width: 70%;
+     margin: 30px;
+     border-radius: 25px;
+     padding: 10px;
+     background-color: #403d39;
+     max-width: 600px;
+     max-height: 550px;
 }
 
-.wrapperSaveIngredients{
-  width: 100%;
-  margin-top: 20px;
-  border-radius: 25px;
-  padding: 10px;
-  background-color: #403d39;
-  max-width: 500px;
+.wrapperIngredients {
+     display: flex;
+     flex-direction: row;
+     justify-content: space-evenly;
+}
+
+.wrapperSaveIngredients {
+     width: 100%;
+     margin-top: 20px;
+     border-radius: 25px;
+     padding: 10px;
+     background-color: #403d39;
+     max-width: 500px;
 }
 .leftIngredients {
-  width: 100%;
-  border-radius: 25px;
-  padding: 10px;
-  background-color: #403d39;
-  max-width: 600px;
+     width: 100%;
+     border-radius: 25px;
+     padding: 10px;
+     background-color: #403d39;
+     max-width: 600px;
 }
 
-.leftWrapper{
-  width: 50%;
-  margin: 30px;
-  border-radius: 25px;
-  padding: 10px;
-  max-width: 500px;
-
+.leftWrapper {
+     width: 50%;
+     margin: 30px;
+     border-radius: 25px;
+     padding: 10px;
+     max-width: 500px;
 }
 
 .rightIngredients {
-  width: 50%;
-  margin: 30px;
-  border-radius: 25px;
-  padding: 10px;
-  background-color: #403d39;
-  max-width: 500px;
+     width: 50%;
+     margin: 30px;
+     border-radius: 25px;
+     padding: 10px;
+     background-color: #403d39;
+     max-width: 500px;
 }
-#innerContent{
-  background-color: #252422;
-  border-radius: 25px;
-  border-style: solid;
-  border-color: #ccc5b9;
-  height: 100%;
+#innerContent {
+     background-color: #252422;
+     border-radius: 25px;
+     border-style: solid;
+     border-color: #ccc5b9;
+     height: 100%;
 }
 #typeDescription {
      width: 400px;
      height: 200px;
-  
+
      font-size: 14pt;
 }
 
 #typeDescriptionUpdate {
-  width: 400px;
-  height: 100px;
-  font-size: 14pt;
+     width: 400px;
+     height: 100px;
+     font-size: 14pt;
 }
 #showTop {
      background-color: #252422;
@@ -278,20 +276,19 @@ ul{
      border-bottom: 0em;
 }
 #title {
-  font-size: 50px;
+     font-size: 50px;
 }
-
 
 #titleShow {
      font-size: 40px;
      margin-right: 50px;
 }
 
-.websiteTitle{
+.websiteTitle {
      color: #ccc5b9;
      font-size: 60px;
 }
-.drinkTitle{
+.drinkTitle {
      font-size: 36px;
 }
 
@@ -302,19 +299,19 @@ ul{
 }
 
 #ingredientBox {
-    padding-left: 10px;
+     padding-left: 10px;
      font-size: 30px;
      background-color: #090302;
 }
 .ingredientBoxBorderTopBottom {
-  padding-left: 10px;
-   font-size: 30px;
-   background-color: #090302;
-   border-left: 0em;
-   border-right: 0em;
-   border-style: solid;
-    border-color: #ccc5b9;
-    margin-bottom: 20px;
+     padding-left: 10px;
+     font-size: 30px;
+     background-color: #090302;
+     border-left: 0em;
+     border-right: 0em;
+     border-style: solid;
+     border-color: #ccc5b9;
+     margin-bottom: 20px;
 }
 
 #descriptionShow {
@@ -324,7 +321,7 @@ ul{
      padding-top: 4px;
 }
 
-.front{
+.front {
      display: flex;
      justify-content: center;
      align-items: center;
@@ -332,13 +329,13 @@ ul{
      width: 100%;
 }
 
-.frontfont{
+.frontfont {
      width: 60%;
      font-size: 80px;
      color: #252422;
 }
 #flex {
-  display: flex;
+     display: flex;
 }
 
 #flex-row {
@@ -353,14 +350,14 @@ ul{
 }
 
 #flex-row-userCrud {
-  background-color: #252422;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  display: flex;
-  justify-content: space-evenly;
-  border-bottom-left-radius: 25px;
-  border-bottom-right-radius: 25px;
-  border-style: solid;
+     background-color: #252422;
+     padding-top: 20px;
+     padding-bottom: 20px;
+     display: flex;
+     justify-content: space-evenly;
+     border-bottom-left-radius: 25px;
+     border-bottom-right-radius: 25px;
+     border-style: solid;
      border-color: #ccc5b9;
      border-top: 0em;
 }
@@ -392,26 +389,23 @@ ul{
      background-color: #403d39;
      width: 70%;
      max-width: 600px;
-     
 }
 #commentAddSectionMax {
-  padding: 10px;
-  border-radius: 25px;
-  background-color: #403d39;
-  width: 100%;
-  max-width: 600px;
-  margin-bottom: 10px;
-  height: 160px;
+     padding: 10px;
+     border-radius: 25px;
+     background-color: #403d39;
+     width: 100%;
+     max-width: 600px;
+     margin-bottom: 10px;
+     height: 160px;
 }
 
-
-#commentAddSection-no-bg-color{
+#commentAddSection-no-bg-color {
      width: 70%;
      max-width: 600px;
      padding: 0;
      list-style-type: none;
 }
-
 
 #commentAddContentBox {
      display: flex;
@@ -435,31 +429,42 @@ ul{
 }
 
 #commentList {
-  margin-bottom: 10px;
+     margin-bottom: 10px;
 }
 
-#delte-comment{
+#delte-comment {
      margin: 10px;
 }
 #ingredientsMake {
-  border-style: solid;
-  border-color: #ccc5b9;
-  text-align: left;
-  border-bottom: 0em;
-  border-right: 0em;
-  border-left: 0em;
-
+     border-style: solid;
+     border-color: #ccc5b9;
+     text-align: left;
+     border-bottom: 0em;
+     border-right: 0em;
+     border-left: 0em;
 }
-.deleteForm{
+.deleteForm {
      margin-bottom: 100px;
      height: 100%;
 }
 
-@media(max-width: 768px) {
+@media (max-width: 768px) {
      h1 {
-       font-size: 10px;
+          font-size: 10px;
      }
-     textarea{
+     textarea {
           width: 100px;
-             }
-   }
+     }
+     .frontPageImg {
+          width: 200px;
+          height: 200px;
+     }
+}
+
+
+@media screen and (max-width: 1500px) {
+     .frontPageImg {
+          width: 150px;
+          height: 150px;
+     }
+ }
