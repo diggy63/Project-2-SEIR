@@ -2,19 +2,26 @@ const { resolveInclude } = require("ejs");
 const Drink = require("../models/drink");
 const Ingredient = require("../models/ingredient");
 
-async function addNew(req, res) {
-    try {
-        const drink = await Drink.findById(req.params.id);
-        let createIngredOne = await Ingredient.create(req.body);
-        drink.ingredients.push(createIngredOne._id);
-        drink.save(function(error){
-            res.redirect(`/drinks/${req.params.id}/edit`);
-        })
-    } catch (error) {
-        
-    }
-}
 
+//Not unused code its future code that greats ingredients for the model
+//without attaching it to a Drink. Future plans to have one ingredients attached
+//to many drinks
+// async function addNew(req, res) {
+//     try {
+//         const drink = await Drink.findById(req.params.id);
+//         let createIngredOne = await Ingredient.create(req.body);
+//         drink.ingredients.push(createIngredOne._id);
+//         drink.save(function(error){
+//             res.redirect(`/drinks/${req.params.id}/edit`);
+//         })
+//     } catch (error) {
+        
+//     }
+// }
+
+//creates as many ingredient models as were requested by the user. Then attaches them
+//to the drink that has been made. also attaches the photo to the drink using name made
+// by multer
 async function addIngredients(req, res) {
      try {
           const drink = await Drink.findById(req.params.id);
@@ -41,6 +48,7 @@ async function addIngredients(req, res) {
      } catch (error) {}
 }
 
+//romoves ingredients useing the remove method
 async function deleteIngredient(req, res) {
      try {
          console.log(req.params.drinkId);
@@ -52,6 +60,7 @@ async function deleteIngredient(req, res) {
      } catch (error) {}
 }
 
+//simple update function
 async function update(req,res){
     const updateIngred = await Ingredient.findById(req.params.id);
     updateIngred.ingredients = req.body.ingredients;
@@ -62,7 +71,6 @@ async function update(req,res){
 }
 
 module.exports = {
-     addNew,
      addIngredients,
      delete: deleteIngredient,
      update
