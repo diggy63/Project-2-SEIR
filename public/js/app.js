@@ -6,33 +6,29 @@ const ingredDisplay = document.querySelector("#drink-display");
 const getAll = document.querySelectorAll(".row");
 const wholeDoc = document.querySelector(".contain");
 const commentCounter = document.querySelectorAll("#commentList");
+const updateConstant = document.querySelectorAll('Update-Ingredients');
+
 
 if (commentCounter.length > 1) {
-    
-    let count = commentCounter.length - 1;
-    let startHeight = 1200
-    for (let i = count; i > 0; i--) {
-        console.log("here");
-         startHeight = startHeight + 300;
-         console.log("grow");
-         wholeDoc.style.height = `${startHeight}px`;
-    }
-}
-
-
-
-
-
-if (getAll.length > 1) {
-     let count = getAll.length - 2;
-     let startHeight = 1000;
+     let count = commentCounter.length - 1;
+     let startHeight = 1200;
      for (let i = count; i > 0; i--) {
-          startHeight = startHeight + 450;
+          console.log("here");
+          startHeight = startHeight + 300;
           console.log("grow");
           wholeDoc.style.height = `${startHeight}px`;
      }
 }
 
+if (getAll.length > 1) {
+     let count = getAll.length - 2;
+     let startHeight = 1000;
+     for (let i = count; i > 0; i--) {
+          startHeight = startHeight + 600;
+          console.log("grow");
+          wholeDoc.style.height = `${startHeight}px`;
+     }
+}
 
 if (addI) {
      addI.addEventListener("click", addIngredient);
@@ -62,6 +58,6 @@ function addIngredient(e) {
      h4El.appendChild(text);
      newDisEl.appendChild(h4El);
      ingredDisplay.appendChild(newDisEl);
-     newIngredAdd.value = '';
-     newAmountAdd.value = '';
+     newIngredAdd.value = "";
+     newAmountAdd.value = "";
 }
