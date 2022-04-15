@@ -52,10 +52,15 @@
   </p>
    <h2 align="center">Getting Started</h2>
 <p align="center">
-    <a href="https://cocktail-lounge-dk.herokuapp.com/">CLICK TO PLAY</a>
+    <a href="https://cocktail-lounge-dk.herokuapp.com/">Cocktail Lounge</a>
     <br>
     <a href="https://trello.com/b/GFbahP7I/project-2-cocktails-board">Here's My Trello</a>
     <p>
   <h2 align="center">Icebox</h2>
 <p align="center">
+    Likes feature connected to the USer model
+    <br>
+    Search feature that makes use of the ingredients model
+    <br>
+    User page that shows all the drinks you made and how they are doing
     <p>
