@@ -60,7 +60,7 @@
     <p>
   <h2 align="center">Icebox</h2>
 <p align="center">
-    Likes feature connected to the USer model
+    Likes feature connected to the User model
     <br>
     Search feature that makes use of the ingredients model
     <br>
